@@ -1,0 +1,27 @@
+<!-- initialise 2 var and increment eachtime and disply both and  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a1</title>
+</head>
+<body>
+    <p id="p1" style="color: blue"></p>
+    <script>
+    size=15
+    
+    function fun(){
+        let obj= document.getElementById("p1")
+        obj.innerHTML="Hello"
+        obj.style.fontSize=size+"px"
+        if(size<=51){
+            size++
+        }
+    }
+    setInterval(fun,1000)
+
+    </script>
+</body>
+</html>
