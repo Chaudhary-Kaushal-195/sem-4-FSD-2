@@ -1,0 +1,5 @@
+var fs=require("fs")
+fs.writeFileSync("pb72.txt","hello world")
+console.log("File created successfully")
+fs.unlinkSync("pb72.txt")
+console.log("File deleted successfully")

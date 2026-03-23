@@ -1,0 +1,2 @@
+[5,true,"hello",150,"jorld",1]
+Sorted array is: [true,5,"hello",150,"jorld",1]
