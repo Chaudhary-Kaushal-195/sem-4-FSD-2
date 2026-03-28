@@ -1,0 +1,1 @@
+[{"name":"circle","diameter":8},{"name":"square","side":10}]perimeter of square 40perimeter of circle 25.12

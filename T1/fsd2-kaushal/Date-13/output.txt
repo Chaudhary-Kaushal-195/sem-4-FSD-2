@@ -1,0 +1,7 @@
+
+ Addition 35
+ substraction 10
+ multiplection 1200
+ Addition = 35
+ substraction = 10
+ multiplection = 1200
