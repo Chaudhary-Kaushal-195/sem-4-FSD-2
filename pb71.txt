@@ -1,2 +1,1 @@
-[5,true,"hello",15,"world"]
- Sorted array is: [15,5,"hello",true,"world"]
+34 -78 35 -5 56 12 90 -78 32

@@ -8,24 +8,43 @@
     <title>a1</title>
 </head>
 <body>
-    <p id="p1" style="color: blue"></p>
-    <button onclick="fun1()">font-size</button>
+    <div style="height: 400px; width: 400px ;border: brown; background-color: rgb(0, 0, 0); justify-content: center; display: flex; align-items: center;">
+        <p id="p1" style="color: red ; background-color: rgb(160, 217, 198);"></p>
+    </div>
+    <button onclick="fun1()">font-size++</button>
+    <button onclick="fun2()">font-size--</button>
+    <button onclick="fun3()">stop</button>
+
     <script>
-    size=15
-    fun()
-    function fun(){
-        let obj= document.getElementById("p1")
-        obj.innerHTML="Hello"
-        obj.style.fontSize=size+"px"
-        
-    }
-    function fun1(){
-        setInterval(()=>{if(size<=51){
-            fun(size++)
-        }},50)
+        size=30
+        i=null
+        function fun(){
+            let obj= document.getElementById("p1")
+            obj.innerHTML="Hello"
+            obj.style.fontSize=size+"px"
+            
+        }
 
-    }
+        function fun2(){
+            fun3()
+            i=setInterval(() => {
+                if(size>=20){
+                    fun(size--)
+                }},50)
+        }
 
+        function fun1(){
+            fun3()
+            i=setInterval(() => {
+                if(size<=100){
+                    fun(size++)
+                }},50)
+        }
+
+        function fun3(){
+            clearInterval(i)
+            i=null
+        }
     </script>
 </body>
 </html>

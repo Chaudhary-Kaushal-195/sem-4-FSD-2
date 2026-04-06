@@ -2,7 +2,7 @@ http=require('http')
 http.createServer((req,res)=>{
     if(req.url=='/'){
         res.writeHead(200,{'Content-Text':'text/html'})
-        res.write('<h1>This is about page</h1>')
+        res.write('<h1>This is Home page</h1>')
 
         res.write(`<a href='/'>Home</a><br>
                     <a href='/about'>About</a><br>

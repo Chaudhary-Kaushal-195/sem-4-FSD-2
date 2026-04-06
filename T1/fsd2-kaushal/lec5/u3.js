@@ -6,7 +6,7 @@ var d= url.parse(addr,true)
 
 var avg=(parseInt(d.query.T1)+parseInt(d.query.T2)+parseInt(d.query.T3))/3
 
-var myurl=new URL(addr)
-console.log(myurl)
-fs.writeFileSync('avg.txt','Ang is = '+avg)
+
+console.log(avg)
+fs.writeFileSync('avg.txt','Ang is = '+avg.toString())
 fs.readFileSync('avg.txt','utf-8')

@@ -1,5 +1,5 @@
 const http= require('http')
-http.createServer((reg,res)=>{
+http.createServer((req,res)=>{
     res.writeHead(200,{"Content-Type":"text/html"})
     res.write("How r you?")
     res.write("<h1>Hello Server</h1>")

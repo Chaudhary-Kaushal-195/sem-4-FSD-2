@@ -11,7 +11,7 @@ ee.on("conn",fun)
 ee.on("conn",fun1)
 
 
-ee.emit("b")
+// ee.emit("b")
 ee.emit("a")
 
 let c=ee.listenerCount("conn")
@@ -21,6 +21,8 @@ ee.emit("conn")
 ee.removeListener('conn',fun)
 
 let d=ee.listenerCount('conn')
-
+ee.removeAllListeners('conn')
 console.log(d)
+
 ee.emit("conn")
+   

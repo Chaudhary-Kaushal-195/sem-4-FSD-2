@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wedding Event</title>
+  <script>
+    class WeddingManager {
+      constructor() {
+        this.events = {};
+      }
+      on(event, listener) {
+        if (!this.events[event]) this.events[event] = [];
+        this.events[event].push(listener);
+      }
+      emit(event) {
+        if (this.events[event]) {
+          this.events[event].forEach(listener => listener());
+        }
+      }
+    }
+
+    const weddingManager = new WeddingManager();
+
+    function startWedding() {
+      console.log("The wedding ceremony is starting...");
+      weddingManager.emit("ceremonyStart");
+    }
+
+    weddingManager.on("ceremonyStart", () => console.log("Decorator prepares the stage"));
+    weddingManager.on("ceremonyStart", () => console.log("Photographer takes photos"));
+    weddingManager.on("ceremonyStart", () => console.log("Caterers serve food"));
+    weddingManager.on("ceremonyStart", () => console.log("DJ plays music"));
+  </script>
+</head>
+<body>
+  <button onclick="startWedding()">Start Wedding</button>
+</body>
+</html>

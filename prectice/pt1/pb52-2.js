@@ -1,0 +1,12 @@
+var ps=require("fs");
+ps.writeFileSync("a.txt","Hello");
+data=ps.readFileSync("a.txt","utf-8");
+data2=JSON.stringify(data);
+data3=JSON.stringify(data2);
+data4=JSON.stringify(data3);
+data5=JSON.parse(data4);
+console.log(data);
+console.log(data2);
+console.log(data3);
+console.log(data4);
+console.log(data5);

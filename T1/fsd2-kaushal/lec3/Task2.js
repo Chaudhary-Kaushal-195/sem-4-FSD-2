@@ -4,6 +4,7 @@ var data=[{"name":"abc","age":22},{"name":"pqr","age":32}]
 fs=require("fs")
 fs.writeFileSync("student.txt",JSON.stringify(data))
 data1=fs.readFileSync("student.txt","utf-8")
+console.log(data1)
 data2=JSON.parse(data1)
 console.log(data2)
 fs.copyFileSync("student.txt","s2.txt")
