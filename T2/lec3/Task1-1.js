@@ -1,8 +1,8 @@
 const expr = require("express");
 const app = expr();
 
-app.use(expr.urlencoded({ extended: false }));
-app.use(expr.static('../public', { index: "two.html" }));
+app.use(expr.urlencoded({ extended: true}));
+app.use(expr.static('../public', { index: "index.html" }));
 
 // Authentication Middleware
 app.post("/check", (req, res, next) => {
