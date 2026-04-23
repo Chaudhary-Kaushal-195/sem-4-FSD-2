@@ -9,17 +9,25 @@ let obj=[{name:"abc",age:28},
 
 app.get('/',(req,res)=>{
     res.type('text/html')
-    res.send(`<table><tr>
-        <th>"Name"</th>
-        <th>"age"</th>
-    </tr>
+    res.write(`<table>
     <tr>
-        <td>obj.name</td>
-        <td>obj.age</td>
-    </tr></table>`)
+        <th>"Name"</th>
+        <th>"Age"</th>
+    </tr>
+    `)
+    for(i of obj ){
+    res.write(`<tr>
+        <td>${i.name}</td>
+        <td>${i.age}</td>
+    </tr>`)}
     
+    res.write(`</table>`)
+    
+
+
+    res.end()
 })
 
-app.listen(3001,()=>{
+app.listen(3002,()=>{
     console.log("http://localhost:3002")
 })

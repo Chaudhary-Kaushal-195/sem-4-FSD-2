@@ -14,6 +14,6 @@ app.post('/data',(req,res)=>{
     age=req.body.age
     res.send("name = "+Uname+" Age = "+age)
 })
-app.listen(5679,()=>{
-    console.log("http://localhost:5679")
+app.listen(5680,()=>{
+    console.log("http://localhost:5680")
 })

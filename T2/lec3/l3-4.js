@@ -14,6 +14,7 @@ b=(req,res,next)=>{
 app.use('/data',a,b)
 
 app.get('/data',(req,res)=>{
+
     res.send("username = "+req.uname+" Updated Marks= "+req.mark)
 })
 app.listen(6007,()=>{
