@@ -9,6 +9,7 @@ const mvi = [
 router.get("/m", (req, res) => {
   res.json(mvi);
 });
+
 router.get("/m/:id", (req, res) => {
   data = mvi.filter((a) => a.id == req.params.id);
   if (data.length > 0) {
