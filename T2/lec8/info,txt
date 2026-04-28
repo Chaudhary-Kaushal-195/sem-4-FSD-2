@@ -1,0 +1,57 @@
+🧠 🧱 COMPLETE TECH STACK (TEAM BREAKDOWN)
+
+Think of your system as 3 layers + DB
+
+🖥️ 1. Frontend (React) — UI + User Interaction
+Tech:
+React (Vite or CRA)
+Tailwind CSS (for fast UI)
+Axios (API calls)
+Responsibilities:
+Image upload (camera/file)
+Show:
+Ingredients analysis
+Health score
+Comparison UI
+Learn:
+React components
+State management (useState, useEffect)
+File upload handling
+🌐 2. Backend (Node + Express) — Main Controller
+Tech:
+Node.js
+Express.js
+Multer (image upload)
+Axios (call Python service)
+Responsibilities:
+Receive image from frontend
+Store data
+Send image → Python
+Return processed result
+🧠 3. Python Service — CORE INTELLIGENCE
+
+This is your main differentiator
+
+Tech:
+Python
+Pandas
+scikit-learn
+pytesseract (OCR)
+rapidfuzz (text correction)
+regex
+Responsibilities:
+OCR (image → text)
+Clean text
+Extract:
+Ingredients
+Nutrition values
+Map ingredients → meaning
+Calculate health score
+Return structured JSON
+🗄️ 4. Database
+Tech:
+MongoDB
+Store:
+Ingredient database
+User scans (optional)
+Product comparisons
