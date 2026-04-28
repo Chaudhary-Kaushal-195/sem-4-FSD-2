@@ -12,9 +12,9 @@ var mailoption = {
   from: "kaushalchau.2007@gmail.com",
   to: "chaudharykaushalrakeshbhai@gmail.com",
   subject: "This is mail",
-  //   text: "jambo",
+  text: "jambo",
   html: "<h1>Hello Html</h1>",
-  //   attachments: [{ filename: "a.png", path: "./.png" }],
+  attachments: [{ filename: "tomcat.png", path: "./tomcat.png" }],
 };
 trans.sendMail(mailoption, (err, info) => {
   if (err) {
