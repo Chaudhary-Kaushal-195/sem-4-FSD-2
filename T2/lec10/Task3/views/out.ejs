@@ -1,0 +1,27 @@
+<h3>name od student : <%= fname %></h3>
+<h3>marks of student : </h3>
+<table>
+    <tr>
+        <td><%= mark1 %></td>
+    </tr>
+    <tr>
+        <td><%= mark2 %></td>
+    </tr>
+    <tr>
+        <td><%= mark3 %></td>
+    </tr>
+    <tr>
+        <td><%= mark4 %></td>
+    </tr>
+    <tr> 
+        <td>
+            Total =<%= total %>
+        </td>
+    <tr>
+</table>
+<% if(total>35){ %>
+    <b>pass</b>
+
+<% }else{ %>
+    <b>fail</b>
+<% } %>

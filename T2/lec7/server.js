@@ -9,7 +9,7 @@ storage = multer.diskStorage({
   },
 });
 
-upload = multer({ storage });
+upload = multer({ storage,limits=520});
 app.post("/data", upload.single("mypic"), (req, res) => {
   file = req.file;
   if (file) {
