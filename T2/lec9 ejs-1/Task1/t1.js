@@ -11,13 +11,15 @@ app.get("/data", (req, res) => {
       pass: "iyjn nvyb lftp pqzg",
     },
   });
+
   var mailoption = {
     from: "kaushalchau.2007@gmail.com",
-    to: "chaudharykaushalrakeshbhai@gmail.com",
+    to: "chaudharykaushalrakeshbhai@gmail.com,ayushrana2482@gmail.com",
     subject: "This is mail",
     html: `<p>Thank you for ordering <h3 style:"color:red">Product Name :"${req.query.fname}"</h3> from our site </p><br>
     <h3 style:"color: red">Delivery date : ${req.query.date}</h3>`,
   };
+
   trans.sendMail(mailoption, (err, info) => {
     if (info) {
       res.send(`Mail send !!! `);
@@ -26,6 +28,7 @@ app.get("/data", (req, res) => {
     }
   });
 });
+
 app.listen(5678, () => {
   console.log("http://localhost:5678");
 });
