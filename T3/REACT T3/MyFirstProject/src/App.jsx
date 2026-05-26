@@ -5,8 +5,9 @@ import CN from "./CN";
 import M2 from "./M2";
 import Ev from "./Ev";
 import Like from "./Like";
-// import Home from "./components/Home";
-// import About from "./components/About";
+import Home from "./components/Home";
+import About from "./components/About";
+import Contact from "./components/Contact";
 
 import MainR from "./components/MainR";
 export default function App() {
@@ -25,8 +26,9 @@ export default function App() {
       <Ev />
       <Like />
       <MainR />
-      {/* <Home />
-        <About /> */}
+      <Home />
+      <About />
+      <Contact />
     </>
   );
 }

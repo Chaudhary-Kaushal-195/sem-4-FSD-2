@@ -1,14 +1,16 @@
+import { useState } from "react";
+
 export default function Like() {
-  var like = 0;
+  const [like, setLike] = useState(0);
+
   const b = () => {
-    var like = like + 1;
-    document.getElementById("data22").innerText = "Like count : " + like;
+    setLike(like + 1);
   };
 
   return (
     <>
       <button onClick={b}>Like Here</button>
-      <h2 id="data22">Like count : {like}</h2>
+      <h2>Like count : {like}</h2>
     </>
   );
 }
