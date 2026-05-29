@@ -10,6 +10,7 @@ import img3 from "../assets/vite.svg";
 import Us2 from "./us2";
 import Us3 from "./us3";
 import Ustask2 from "./ustask2";
+import Ustask4 from "./ustask4";
 const obj1 = [
   { name: 'Mi', price: '20000', pic: img1 },
   { name: 'samsung', price: '25000', pic: img2 },
@@ -67,6 +68,11 @@ export default function MainR() {
               UsTask2
             </Link>
           </li>
+          <li>
+            <Link style={styles.link} to="/ustask4">
+              UsTask4
+            </Link>
+          </li>
         </ul>
       </nav>
 
@@ -80,6 +86,7 @@ export default function MainR() {
         <Route path="/us2" element={<Us2 />} />
         <Route path="/us3" element={<Us3 />} />
         <Route path="/ustask2" element={<Ustask2 />} />
+        <Route path="/ustask4" element={<Ustask4 />} />
       </Routes>
     </Router>
   );
