@@ -15,6 +15,7 @@ import Ustask4 from "./ustask4";
 import Us6 from "./us6";
 import Us7 from "./us7";
 import Us8 from "./us8";
+import Ustask9 from "./ustask9";
 import './MainR.css';
 
 const obj1 = [
@@ -39,6 +40,7 @@ const moreItems = [
   { label: 'Us6', path: '/us6' },
   { label: 'Us7', path: '/us7' },
   { label: 'Us8', path: '/us8' },
+  { label: 'UsTask9', path: '/ustask9' },
 ];
 
 export default function MainR() {
@@ -103,6 +105,7 @@ export default function MainR() {
         <Route path="/us6" element={<Us6 />} />
         <Route path="/us7" element={<Us7 />} />
         <Route path="/us8" element={<Us8 />} />
+        <Route path="/ustask9" element={<Ustask9 />} />
       </Routes>
     </Router>
   );
