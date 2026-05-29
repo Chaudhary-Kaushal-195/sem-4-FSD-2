@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useState } from "react";
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
@@ -11,69 +12,81 @@ import Us2 from "./us2";
 import Us3 from "./us3";
 import Ustask2 from "./ustask2";
 import Ustask4 from "./ustask4";
+import Us6 from "./us6";
+import Us7 from "./us7";
+import Us8 from "./us8";
+import './MainR.css';
+
 const obj1 = [
   { name: 'Mi', price: '20000', pic: img1 },
   { name: 'samsung', price: '25000', pic: img2 },
   { name: 'apple', price: '30000', pic: img3 }
 ];
 
+const menuItems = [
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
+  { label: 'Contact', path: '/contact' },
+  { label: 'Product', path: '/product' },
+];
+
+const moreItems = [
+  { label: 'Usi', path: '/usi' },
+  { label: 'Us2', path: '/us2' },
+  { label: 'Us3', path: '/us3' },
+  { label: 'UsTask2', path: '/ustask2' },
+  { label: 'UsTask4', path: '/ustask4' },
+  { label: 'Us6', path: '/us6' },
+  { label: 'Us7', path: '/us7' },
+  { label: 'Us8', path: '/us8' },
+];
 
 export default function MainR() {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   return (
     <Router>
       {/* Navbar */}
-      <nav style={styles.navbar}>
-        <h2 style={styles.logo}>MyApp</h2>
+      <nav className="navbar">
+        <h2 className="logo">MyApp</h2>
 
-        <ul style={styles.navLinks}>
-          <li>
-            <Link style={styles.link} to="/">
-              Home
-            </Link>
-          </li>
+        <div className="navContainer">
+          <ul className="navLinks">
+            {menuItems.map((item) => (
+              <li key={item.path}>
+                <Link className="link" to={item.path}>
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-          <li>
-            <Link style={styles.link} to="/about">
-              About
-            </Link>
-          </li>
-
-          <li>
-            <Link style={styles.link} to="/contact">
-              Contact
-            </Link>
-          </li>
-          <li>
-            <Link style={styles.link} to="/product">
-              Product
-            </Link>
-          </li>
-          <li>
-            <Link style={styles.link} to="/usi">
-              Usi
-            </Link>
-          </li>
-          <li>
-            <Link style={styles.link} to="/us2">
-              Us2
-            </Link>
-          </li>
-          <li>
-            <Link style={styles.link} to="/us3">
-              Us3
-            </Link>
-          </li>
-          <li>
-            <Link style={styles.link} to="/ustask2">
-              UsTask2
-            </Link>
-          </li>
-          <li>
-            <Link style={styles.link} to="/ustask4">
-              UsTask4
-            </Link>
-          </li>
-        </ul>
+          {/* Dropdown Menu */}
+          <div 
+            className="dropdownWrapper"
+            onClick={() => setDropdownOpen(!dropdownOpen)}
+          >
+            <button className="dropdownBtn">
+              More ▼
+            </button>
+            
+            {dropdownOpen && (
+              <ul className="dropdownMenu">
+                {moreItems.map((item) => (
+                  <li key={item.path} className="dropdownItem">
+                    <Link 
+                      className="dropdownLink" 
+                      to={item.path}
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
       </nav>
 
       {/* Routes */}
@@ -87,37 +100,10 @@ export default function MainR() {
         <Route path="/us3" element={<Us3 />} />
         <Route path="/ustask2" element={<Ustask2 />} />
         <Route path="/ustask4" element={<Ustask4 />} />
+        <Route path="/us6" element={<Us6 />} />
+        <Route path="/us7" element={<Us7 />} />
+        <Route path="/us8" element={<Us8 />} />
       </Routes>
     </Router>
   );
 }
-
-const styles = {
-  navbar: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    backgroundColor: "#111827",
-    padding: "15px 40px",
-  },
-
-  logo: {
-    color: "white",
-    margin: 0,
-  },
-
-  navLinks: {
-    display: "flex",
-    gap: "25px",
-    listStyle: "none",
-    margin: 0,
-    padding: 0,
-  },
-
-  link: {
-    color: "white",
-    textDecoration: "none",
-    fontSize: "18px",
-    fontWeight: "500",
-  },
-};
