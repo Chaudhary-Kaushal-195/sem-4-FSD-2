@@ -1,21 +1,18 @@
-// Task-2
-
-// Write a program having a button “show”. By clicking a button, it will display text and button 
-// text will be changed as “Hide”. By clicking Hide button, 
-// the text will be disappeared and button text will become “show” again. 
-
 import { useState } from "react";
+import './ustask2.css';
 
 export default function Ustask2() {
     const [text, settext] = useState(true);
-  const ht = () => {
-    settext(!text);
-  }
-  const bt = text ? "show" : "hide";
+    const ht = () => {
+      settext(!text);
+    }
+    const bt = text ? "Hide" : "Show";
     return (
-        <div>
-            {text && <p>This is the text that will be shown or hidden.</p>}
-            <button onClick={ht}>{bt}</button>
+        <div className="ustask2Container">
+            <div className="ustask2Content">
+                {text && <p className="ustask2Text">This is the text that will be shown or hidden.</p>}
+                <button className="ustask2Button" onClick={ht}>{bt} Text</button>
+            </div>
         </div>
     )
 }

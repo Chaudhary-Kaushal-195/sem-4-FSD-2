@@ -1,0 +1,68 @@
+.us2Container {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  padding: 40px 20px;
+}
+
+.us2Content {
+  text-align: center;
+  animation: slideUp 0.6s ease-out;
+  max-width: 600px;
+}
+
+.us2ColorBox {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 30px;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.us2Title {
+  font-size: 36px;
+  color: #fff;
+  margin: 0 0 20px 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.us2Button {
+  padding: 14px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: #fff;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+  margin-top: 20px;
+}
+
+.us2Button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+}
+
+.us2Button:active {
+  transform: translateY(-1px);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

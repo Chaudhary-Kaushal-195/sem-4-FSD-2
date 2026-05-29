@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './usi.css';
 
 export default function UsI() {
   const [count, setCount] = useState(0);
@@ -9,10 +10,15 @@ export default function UsI() {
     setCount(count - 1);
   }
     return (
-        <div>
-            <h1>Count: {count}</h1>
-            <button onClick={hc1}>Increment</button>
-            <button onClick={hc2}>Decrement</button>
+        <div className="usiContainer">
+            <div className="usiContent">
+                <h2 className="usiTitle">Counter Application</h2>
+                <div className="usiCounter">{count}</div>
+                <div className="usiButtonGroup">
+                  <button className="usiButton usiButtonIncrement" onClick={hc1}>+ Increment</button>
+                  <button className="usiButton usiButtonDecrement" onClick={hc2}>- Decrement</button>
+                </div>
+            </div>
         </div>
     )
 }
