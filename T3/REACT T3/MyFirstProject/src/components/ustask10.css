@@ -1,0 +1,414 @@
+/* ============================================
+   Scrollbar Styling
+   ============================================ */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-alt) 100%);
+  border-radius: 10px;
+  border: 2px solid rgba(15, 23, 42, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+}
+
+/* Firefox */
+* {
+  scrollbar-color: var(--color-primary) rgba(15, 23, 42, 0.3);
+  scrollbar-width: thin;
+}
+
+/* ============================================
+   CSS Variables - Color & Spacing Palette
+   ============================================ */
+:root {
+  --color-bg-dark: #0f172a;
+  --color-bg-secondary: #1e293b;
+  --color-text-primary: #fff;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+
+  --color-primary: #3b82f6;
+  --color-primary-alt: #8b5cf6;
+  --color-success: #10b981;
+  --color-success-dark: #059669;
+  --color-danger: #ef4444;
+  --color-danger-dark: #dc2626;
+
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 20px;
+  --spacing-xl: 30px;
+  --spacing-2xl: 40px;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 32px;
+  --font-size-md: 24px;
+
+  --transition-default: all 0.3s ease;
+  --transition-animation: 0.6s ease-out;
+
+  --border-width: 2px;
+  --box-shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.2);
+  --box-shadow-md: 0 8px 25px;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-alt) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-base {
+  padding: 14px 32px;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-default);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: var(--box-shadow-sm);
+  color: var(--color-text-primary);
+}
+
+.btn-hover-lift {
+  transition: var(--transition-default);
+}
+
+.btn-hover-lift:hover {
+  transform: translateY(-3px);
+}
+
+.btn-hover-lift:active {
+  transform: translateY(-1px);
+}
+
+.form-input-base {
+  padding: 14px 16px;
+  border: var(--border-width) solid rgba(var(--color-primary-rgb), 0.3);
+  border-radius: var(--radius-sm);
+  background: rgba(30, 41, 59, 0.5);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  transition: var(--transition-default);
+  font-family: inherit;
+}
+
+/* ============================================
+   Main Container
+   ============================================ */
+.ustask9Container {
+  min-height: calc(100vh - 80px);
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-dark) 0%,
+    var(--color-bg-secondary) 50%,
+    var(--color-bg-dark) 100%
+  );
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   Content & Layout
+   ============================================ */
+.ustask9Content {
+  animation: slideUp var(--transition-animation);
+  max-width: 700px;
+  width: 100%;
+}
+
+.ustask9Title {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-xl) 0;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-alt) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ustask9FormContainer {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.05) 0%,
+    rgba(139, 92, 246, 0.05) 100%
+  );
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl);
+}
+
+/* ============================================
+   Form Elements
+   ============================================ */
+.ustask9Form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.ustask9FormGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.ustask9Label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ustask9Error {
+  font-size: 12px;
+  color: var(--color-danger);
+  font-weight: 500;
+  margin-top: 4px;
+  display: block;
+}
+
+.ustask9Input,
+.ustask9Textarea,
+.ustask9Select {
+  padding: 14px 16px;
+  border: var(--border-width) solid rgba(59, 130, 246, 0.3);
+  border-radius: var(--radius-sm);
+  background: rgba(30, 41, 59, 0.5);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  transition: var(--transition-default);
+  font-family: inherit;
+}
+
+.ustask9Input::placeholder,
+.ustask9Textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.ustask9Input:focus,
+.ustask9Textarea:focus,
+.ustask9Select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background: rgba(30, 41, 59, 0.8);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.ustask9Textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ============================================
+   Radio Group
+   ============================================ */
+.ustask9RadioGroup {
+  display: flex;
+  gap: 30px;
+  padding: var(--spacing-md) 0;
+  flex-wrap: wrap;
+}
+
+.ustask9RadioGroup label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: color var(--transition-default);
+}
+
+.ustask9RadioGroup label:hover {
+  color: var(--color-primary);
+}
+
+.ustask9RadioGroup input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+/* ============================================
+   Select Dropdown
+   ============================================ */
+.ustask9Select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  padding-right: 40px;
+}
+
+.ustask9Select option {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  padding: 10px;
+}
+
+.ustask9Select option:hover {
+  background: var(--color-primary);
+  color: var(--color-text-primary);
+}
+
+/* ============================================
+   Button Group
+   ============================================ */
+.ustask9ButtonGroup {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  margin-top: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.ustask9Button {
+  padding: 14px 32px;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-default);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: var(--box-shadow-sm);
+  color: var(--color-text-primary);
+}
+
+.ustask9ButtonSubmit {
+  background: linear-gradient(
+    135deg,
+    var(--color-success) 0%,
+    var(--color-success-dark) 100%
+  );
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+  min-width: 200px;
+  transition: var(--transition-default);
+}
+
+.ustask9ButtonSubmit:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow-md) rgba(16, 185, 129, 0.5);
+}
+
+.ustask9ButtonSubmit:active {
+  transform: translateY(-1px);
+}
+
+.ustask9ButtonReset {
+  background: linear-gradient(
+    135deg,
+    var(--color-danger) 0%,
+    var(--color-danger-dark) 100%
+  );
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+  transition: var(--transition-default);
+}
+
+.ustask9ButtonReset:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow-md) rgba(239, 68, 68, 0.5);
+}
+
+.ustask9ButtonReset:active {
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 768px) {
+  .ustask9Content {
+    width: 100%;
+  }
+
+  .ustask9FormContainer {
+    padding: var(--spacing-lg);
+  }
+
+  .ustask9Title {
+    font-size: var(--font-size-md);
+  }
+
+  .ustask9ButtonGroup {
+    flex-direction: column;
+  }
+
+  .ustask9ButtonSubmit {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .ustask9ButtonReset {
+    width: 100%;
+  }
+
+  .ustask9RadioGroup {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

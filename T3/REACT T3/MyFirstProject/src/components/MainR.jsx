@@ -16,6 +16,10 @@ import Us6 from "./us6";
 import Us7 from "./us7";
 import Us8 from "./us8";
 import Ustask9 from "./ustask9";
+import Ustask10 from "./ustask10";
+import Usrstask3 from "./usrstask3";
+import UR from "./ur";
+import Urtask2 from "./urtask2";
 import './MainR.css';
 
 const obj1 = [
@@ -41,6 +45,10 @@ const moreItems = [
   { label: 'Us7', path: '/us7' },
   { label: 'Us8', path: '/us8' },
   { label: 'UsTask9', path: '/ustask9' },
+  { label: 'UsTask10', path: '/ustask10' },
+  { label: 'Usrstask3', path: '/usrstask3' },
+  { label: 'UR', path: '/ur' },
+  { label: 'Urtask2', path: '/urtask2' }
 ];
 
 export default function MainR() {
@@ -106,6 +114,10 @@ export default function MainR() {
         <Route path="/us7" element={<Us7 />} />
         <Route path="/us8" element={<Us8 />} />
         <Route path="/ustask9" element={<Ustask9 />} />
+        <Route path="/ustask10" element={<Ustask10 />} />
+        <Route path="/usrstask3" element={<Usrstask3 />} />
+        <Route path="/ur" element={<UR />} />
+        <Route path="/urtask2" element={<Urtask2 />} />
       </Routes>
     </Router>
   );

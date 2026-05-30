@@ -1,0 +1,279 @@
+/* ============================================
+   CSS Variables - Color & Spacing Palette
+   ============================================ */
+:root {
+  --color-bg-dark: #0f172a;
+  --color-bg-secondary: #1e293b;
+  --color-text-primary: #fff;
+  --color-text-secondary: #cbd5e1;
+  --color-primary: #3b82f6;
+  --color-primary-alt: #8b5cf6;
+  --spacing-lg: 20px;
+  --spacing-xl: 30px;
+  --spacing-2xl: 40px;
+  --radius-md: 12px;
+  --transition: all 0.3s ease;
+}
+
+/* ============================================
+   Container
+   ============================================ */
+.usrstask3Container {
+  min-height: calc(100vh - 80px);
+  background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-secondary) 50%, var(--color-bg-dark) 100%);
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.usrstask3Content {
+  width: 100%;
+  max-width: 1200px;
+  animation: slideUp 0.6s ease-out;
+}
+
+/* ============================================
+   Title
+   ============================================ */
+.usrstask3Title {
+  font-size: 36px;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-2xl) 0;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-alt) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   Category Buttons
+   ============================================ */
+.usrstask3CategoryButtons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: var(--spacing-2xl);
+  flex-wrap: wrap;
+}
+
+.usrstask3CategoryBtn {
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  border: 2px solid rgba(59, 130, 246, 0.4);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.usrstask3CategoryBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-text-primary);
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+}
+
+.usrstask3CategoryBtn.active {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-alt) 100%);
+  color: var(--color-text-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.usrstask3CategoryBtn.active:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+}
+
+/* ============================================
+   Gallery Grid
+   ============================================ */
+.usrstask3Gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
+}
+
+/* ============================================
+   Card
+   ============================================ */
+.usrstask3Card {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.6) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  transition: var(--transition);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.usrstask3Card:hover {
+  border-color: rgba(59, 130, 246, 0.6);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.8) 100%);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
+}
+
+.usrstask3CardImage {
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: var(--spacing-lg);
+  background: rgba(59, 130, 246, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.usrstask3CardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.usrstask3Card:hover .usrstask3CardImage img {
+  transform: scale(1.08);
+}
+
+.usrstask3CardName {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 8px 0;
+}
+
+.usrstask3CardCategory {
+  font-size: 13px;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* ============================================
+   No Results
+   ============================================ */
+.usrstask3NoResults {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 18px;
+  padding: var(--spacing-xl);
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 1024px) {
+  .usrstask3Gallery {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .usrstask3Container {
+    padding: 30px 15px;
+  }
+
+  .usrstask3Title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .usrstask3CategoryButtons {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .usrstask3CategoryBtn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .usrstask3Gallery {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+  }
+
+  .usrstask3Card {
+    padding: 12px;
+  }
+
+  .usrstask3CardImage {
+    height: 200px;
+    margin-bottom: 10px;
+  }
+
+  .usrstask3CardName {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .usrstask3Container {
+    padding: 20px 10px;
+  }
+
+  .usrstask3Title {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .usrstask3CategoryButtons {
+    gap: 6px;
+    margin-bottom: 15px;
+  }
+
+  .usrstask3CategoryBtn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .usrstask3Gallery {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .usrstask3Card {
+    padding: 10px;
+  }
+
+  .usrstask3CardImage {
+    height: 160px;
+    margin-bottom: 8px;
+  }
+
+  .usrstask3CardName {
+    font-size: 12px;
+  }
+}
