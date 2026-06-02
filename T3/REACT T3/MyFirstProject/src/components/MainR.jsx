@@ -20,7 +20,11 @@ import Ustask10 from "./ustask10";
 import Usrstask3 from "./usrstask3";
 import UR from "./ur";
 import Urtask2 from "./urtask2";
+import Uc1 from "./uc1";
+import Comp1 from "./comp1";
+import Ue1 from "./ue1";
 import './MainR.css';
+
 
 const obj1 = [
   { name: 'Mi', price: '20000', pic: img1 },
@@ -48,7 +52,10 @@ const moreItems = [
   { label: 'UsTask10', path: '/ustask10' },
   { label: 'Usrstask3', path: '/usrstask3' },
   { label: 'UR', path: '/ur' },
-  { label: 'Urtask2', path: '/urtask2' }
+  { label: 'Urtask2', path: '/urtask2' },
+  { label: 'Uc1', path: '/uc1' },
+  { label: 'Comp1', path: '/comp1' },
+  { label: 'Ue1', path: '/ue1' }
 ];
 
 export default function MainR() {
@@ -118,6 +125,9 @@ export default function MainR() {
         <Route path="/usrstask3" element={<Usrstask3 />} />
         <Route path="/ur" element={<UR />} />
         <Route path="/urtask2" element={<Urtask2 />} />
+        <Route path="/uc1" element={<Uc1 />} />
+        <Route path="/comp1" element={<Comp1 />} />
+        <Route path="/ue1" element={<Ue1 />} />
       </Routes>
     </Router>
   );
