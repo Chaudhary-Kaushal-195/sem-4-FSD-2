@@ -23,39 +23,42 @@ import Urtask2 from "./urtask2";
 import Uc1 from "./uc1";
 import Comp1 from "./comp1";
 import Ue1 from "./ue1";
-import './MainR.css';
-
+import Ue2 from "./ue2";
+import Ax1 from "./Ax1";
+import "./MainR.css";
 
 const obj1 = [
-  { name: 'Mi', price: '20000', pic: img1 },
-  { name: 'samsung', price: '25000', pic: img2 },
-  { name: 'apple', price: '30000', pic: img3 }
+  { name: "Mi", price: "20000", pic: img1 },
+  { name: "samsung", price: "25000", pic: img2 },
+  { name: "apple", price: "30000", pic: img3 },
 ];
 
 const menuItems = [
-  { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
-  { label: 'Contact', path: '/contact' },
-  { label: 'Product', path: '/product' },
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Contact", path: "/contact" },
+  { label: "Product", path: "/product" },
 ];
 
 const moreItems = [
-  { label: 'Usi', path: '/usi' },
-  { label: 'Us2', path: '/us2' },
-  { label: 'Us3', path: '/us3' },
-  { label: 'UsTask2', path: '/ustask2' },
-  { label: 'UsTask4', path: '/ustask4' },
-  { label: 'Us6', path: '/us6' },
-  { label: 'Us7', path: '/us7' },
-  { label: 'Us8', path: '/us8' },
-  { label: 'UsTask9', path: '/ustask9' },
-  { label: 'UsTask10', path: '/ustask10' },
-  { label: 'Usrstask3', path: '/usrstask3' },
-  { label: 'UR', path: '/ur' },
-  { label: 'Urtask2', path: '/urtask2' },
-  { label: 'Uc1', path: '/uc1' },
-  { label: 'Comp1', path: '/comp1' },
-  { label: 'Ue1', path: '/ue1' }
+  { label: "Usi", path: "/usi" },
+  { label: "Us2", path: "/us2" },
+  { label: "Us3", path: "/us3" },
+  { label: "UsTask2", path: "/ustask2" },
+  { label: "UsTask4", path: "/ustask4" },
+  { label: "Us6", path: "/us6" },
+  { label: "Us7", path: "/us7" },
+  { label: "Us8", path: "/us8" },
+  { label: "UsTask9", path: "/ustask9" },
+  { label: "UsTask10", path: "/ustask10" },
+  { label: "Usrstask3", path: "/usrstask3" },
+  { label: "UR", path: "/ur" },
+  { label: "Urtask2", path: "/urtask2" },
+  { label: "Uc1", path: "/uc1" },
+  { label: "Comp1", path: "/comp1" },
+  { label: "Ue1", path: "/ue1" },
+  { label: "Ue2", path: "/ue2" },
+  { label: "Ax1", path: "/Ax1" },
 ];
 
 export default function MainR() {
@@ -79,20 +82,18 @@ export default function MainR() {
           </ul>
 
           {/* Dropdown Menu */}
-          <div 
+          <div
             className="dropdownWrapper"
             onClick={() => setDropdownOpen(!dropdownOpen)}
           >
-            <button className="dropdownBtn">
-              More ▼
-            </button>
-            
+            <button className="dropdownBtn">More ▼</button>
+
             {dropdownOpen && (
               <ul className="dropdownMenu">
                 {moreItems.map((item) => (
                   <li key={item.path} className="dropdownItem">
-                    <Link 
-                      className="dropdownLink" 
+                    <Link
+                      className="dropdownLink"
                       to={item.path}
                       onClick={() => setDropdownOpen(false)}
                     >
@@ -128,6 +129,8 @@ export default function MainR() {
         <Route path="/uc1" element={<Uc1 />} />
         <Route path="/comp1" element={<Comp1 />} />
         <Route path="/ue1" element={<Ue1 />} />
+        <Route path="/ue2" element={<Ue2 />} />
+        <Route path="/Ax1" element={<Ax1 />} />
       </Routes>
     </Router>
   );
