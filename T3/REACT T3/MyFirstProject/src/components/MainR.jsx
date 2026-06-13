@@ -86,7 +86,7 @@ export default function MainR() {
             className="dropdownWrapper"
             onClick={() => setDropdownOpen(!dropdownOpen)}
           >
-            <button className="dropdownBtn">More ▼</button>
+            <button className="dropdownBtn">More</button>
 
             {dropdownOpen && (
               <ul className="dropdownMenu">
