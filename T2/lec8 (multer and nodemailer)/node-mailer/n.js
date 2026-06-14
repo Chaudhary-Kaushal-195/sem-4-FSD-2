@@ -5,7 +5,7 @@ var trans = nm.createTransport({
   port: 465,
   auth: {
     user: "kaushalchau.2007@gmail.com",
-    pass: "iyjn nvyb lftp pqzg",
+    pass: "---- ---- ---- ----",
   },
 });
 var mailoption = {
