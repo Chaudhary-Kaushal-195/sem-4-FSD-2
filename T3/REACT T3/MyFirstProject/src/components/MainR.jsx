@@ -25,6 +25,7 @@ import Comp1 from "./comp1";
 import Ue1 from "./ue1";
 import Ue2 from "./ue2";
 import Ax1 from "./Ax1";
+import Ax2 from "./Ax2";
 import "./MainR.css";
 
 const obj1 = [
@@ -59,6 +60,7 @@ const moreItems = [
   { label: "Ue1", path: "/ue1" },
   { label: "Ue2", path: "/ue2" },
   { label: "Ax1", path: "/Ax1" },
+  { label: "Ax2", path: "/Ax2" },
 ];
 
 export default function MainR() {
@@ -131,6 +133,7 @@ export default function MainR() {
         <Route path="/ue1" element={<Ue1 />} />
         <Route path="/ue2" element={<Ue2 />} />
         <Route path="/Ax1" element={<Ax1 />} />
+        <Route path="/Ax2" element={<Ax2 />} />
       </Routes>
     </Router>
   );

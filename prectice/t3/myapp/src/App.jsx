@@ -11,7 +11,14 @@ import F4 from "./Combine";
 import SaveButton from "./onclick";
 import LoginForm from "./onsubmit";
 import SearchBox from "./onchange";
-
+import DeleteItem from "./ondoubleclick";
+import HelpText from "./onmousehover";
+import InputFocus from "./onfocus";
+import Notification from "./pa1";
+import Map1 from "./map1";
+import Hook3 from "./pb-323";
+import Hook4 from "./pb-325";
+import Example from "./pb-337";
 import "./App.css";
 
 const menuItems = [
@@ -29,6 +36,14 @@ const moreItems = [
   { label: "OnClick", path: "/onclick" },
   { label: "Login Form", path: "/login" },
   { label: "Search Box", path: "/search" },
+  { label: "Delete Item", path: "/delete" },
+  { label: "Help Text", path: "/help" },
+  { label: "Input Focus", path: "/focus" },
+  { label: "Notification", path: "/notification" },
+  { label: "Map1", path: "/map1" },
+  { label: "Hook3", path: "/hook3" },
+  { label: "Hook4", path: "/hook4" },
+  { label: "Example", path: "/example" },
 ];
 
 export default function MainR() {
@@ -90,6 +105,14 @@ export default function MainR() {
         <Route path="/onclick" element={<SaveButton />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/search" element={<SearchBox />} />
+        <Route path="/delete" element={<DeleteItem />} />
+        <Route path="/help" element={<HelpText />} />
+        <Route path="/focus" element={<InputFocus />} />
+        <Route path="/notification" element={<Notification />} />
+        <Route path="/map1" element={<Map1 />} />
+        <Route path="/hook3" element={<Hook3 />} />
+        <Route path="/hook4" element={<Hook4 />} />
+        <Route path="/example" element={<Example />} />
       </Routes>
     </Router>
   );
