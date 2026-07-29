@@ -1,0 +1,15 @@
+Practical 4&5—Node.js: fetch URL, parse query params, write to file , serve pages
+
+
+Easyterms:url.parse(req.url, true)splitstheincomingURLintopathname(theroute)
+andquery(anobjectofthe?key=value&...parameters,auto-decoded).
+
+
+ExtraFundas:-Examtrap:URLqueryvaluesuse+torepresentspaces(FSD2+T1+Test→
+FSD2 T1 Test)—Node’surl.parsewithtrue(querystringparsing)auto-decodes%20but
+yousometimesstillneed.replace(/\+/g,' ')dependingonhowthevaluewasencoded.
+Examinerscheckifyouhandlethiscorrectly.-Content-TypeheaderMUSTmatchwhatyou’re
+sending(text/htmlforHTMLtagstorenderasbold/italic,text/plainforrawtext)—sending
+HTMLtagswithtext/plainshowsliteral<b>tagsinbrowser,aclassicmistake.-404handling
+withaproperstatuscode(res.writeHead(404,...)) isexpected—don’tjustsendthetext
+withoutthecorrectstatuscode,examinerschecktheheader

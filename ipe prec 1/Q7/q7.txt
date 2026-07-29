@@ -1,0 +1,18 @@
+Practical 7 — Express feedback form+cookies
+
+Easyterms : Cookies store small pieces of data on the CLIENT’s browser and are sentback to
+the server on every request.maxAge(in milliseconds) set san expirytime — 10 * 60 * 1000 = 10 minutes.
+
+ExtraFundas :- Examtrap : max Age is in milliseconds , notseconds—averycommon calculation 
+mistake (10min=10*60*1000 ,  NOT10*60).
+
+-req.cookies requires the cookie-parser middleware 
+
+— withoutapp.use(cookieParser()) , req.cookies is undefined. Always mention this dependency. 
+
+-res.clearCookie() deletes the cookie 
+
+—after logout,accessingthe
+
+protected page correctly shows “Pagenotfound” since the cookie no longer exists.Examiners
+test this full life cycle (create→read→destroy→verifygone).

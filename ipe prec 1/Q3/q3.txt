@@ -1,0 +1,38 @@
+Practical 3 — Node.js fs: write, append, read (async, sequenced)
+
+Easy terms - All three `fs` operations (`writeFile`, `appendFile`, `readFile`)
+are asynchronous (non-blocking) and use callbacks. - To guarantee the sequence
+write → append → read, call each next operation inside the previous operation's
+callback. This pattern is called "callback nesting".
+
+Extra fundas - Exam trap: If you call `writeFile`, `appendFile`, and `readFile`
+one after another WITHOUT nesting them in callbacks, Node.js does not guarantee
+execution order because the operations are asynchronous — the read may run
+before the write finishes. Nesting callbacks fixes this, and examiners often
+test that you understand why. - At scale this nested-callback style becomes
+"callback hell". Mention `fs.promises` + `async/await` as the modern, cleaner
+alternative for extra marks.
+
+fs/promises (cleaner version)
+Include this short `async/await` example to illustrate the modern approach:
+
+```js
+const fs = require('fs/promises');
+
+async function run() {
+	await fs.writeFile('example.txt', 'Hello');
+	await fs.appendFile('example.txt', '\nWorld');
+	const data = await fs.readFile('example.txt', 'utf8');
+	console.log(data);
+}
+
+run().catch(console.error);
+```
+
+Notes
+- Use `try/catch` in real code to handle errors.
+- `fs/promises` keeps the logical order clear and avoids deep callback nesting.
+
+Summary - For exams: explain why callbacks control order, state the "callback
+hell" downside, and propose `fs.promises` with `async/await` as the recommended
+improvement.

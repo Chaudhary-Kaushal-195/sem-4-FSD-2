@@ -1,0 +1,15 @@
+Practical 8 — ExpressJS RESTAPI filtering places by rating
+
+
+TestURL: http://localhost:3001/places?rating=10→ returns only places with rating ≥ 10.
+Easyterms: req.query.ratingreads the?rating=10value from the URL as a string— always 
+convert it with parseFloat/Number before comparing numerically.
+
+ExtraFundas:-Exam trap:req.query.rating is always a STRING even though it looks like
+a number in the URL—comparing a string to a number with>=still works in JS due to type
+coercion , but explicitly using parseFloat/Number() is the “correct” practice examiners expect
+you to demonstrate.-res.json() automatically setsContent-Type:application/json AND
+stringifies the object/array—don’t manuallycallJSON.stringify() then res.send(),that’s
+redundant and examiners may deduct marks for not using the id iomatic Express method.
+REST convention: use query params (?rating=10) for filtering/optional criteria, androute
+params(/places/:id) for identifying a specific resource — a common “why did you choose query vs param” viva question.

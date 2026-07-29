@@ -1,0 +1,12 @@
+Practical 9 — Express file upload with Multer (images only)
+Easy terms  :multer.diskStorage configures WHERE and under WHATNAME the file is saved.
+file Filter runs beforesaving—rejectanythingthat isn’tan imagebycallingcb(null,
+false)orpassinganerror.
+ExtraFundas:-Examtrap: Checkingfile typebyFILEEXTENSION(.jpg, .png) isun
+reliable/insecure—always checkfile.mimetype instead, sinceextensions canbe faked.
+
+Examinersspecificallytest thissecurity-awarenesspoint.-upload.single('fieldname')
+=onefile; upload.array('fieldname', maxCount)=multiplefilesunder thesamefield
+name;upload.fields([...])=multipledifferentnamedfields—knowall threevariants.-Alwayscreatethedestinationfolder(IMAGES)beforehandorhandlefolder-creationincode
+(fs.mkdirSync('IMAGES', {recursive:true})) —Multer doesn’t auto-createmissing
+directories,acommonruntimeerrorinthispractical.
