@@ -1,28 +1,31 @@
-var e=require('events')
-var ee= new e()
-fun=()=>{
-    console.log("Hello")
-}
-fun1=()=>{
-    console.log("Hi")
-}
+var e = require("events");
+var ee = new e();
+fun = () => {
+  console.log("Hello");
+};
+fun1 = () => {
+  console.log("Hi");
+};
 
-ee.on("conn",fun)
-ee.on("conn",fun1)
-
+ee.on("conn", fun);
+ee.on("conn", fun1);
 
 // ee.emit("b")
-ee.emit("a")
+ee.emit("a");
 
-let c=ee.listenerCount("conn")
-console.log(c)
-ee.emit("conn")
+let c = ee.listenerCount("conn");
+console.log(c);
+ee.emit("conn");
 
-ee.removeListener('conn',fun)
+ee.removeListener("conn", fun);
 
-let d=ee.listenerCount('conn')
-ee.removeAllListeners('conn')
-console.log(d)
+let d = ee.listenerCount("conn");
 
-ee.emit("conn")
-   
+ee.removeAllListeners("conn");
+
+console.log(d);
+
+let f = ee.listenerCount("conn");
+
+ee.emit("conn");
+console.log(f);

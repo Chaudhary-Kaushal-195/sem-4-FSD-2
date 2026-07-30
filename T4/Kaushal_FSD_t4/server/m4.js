@@ -23,6 +23,7 @@ const person = mongoose.model("person1", myschema);
 // save data
 const createDoc = async () => {
   try {
+    // eslint-disable-next-line no-unused-vars
     const pdata = [
       { name: "xyz", age: 20 },
       { name: "pgr", age: 100 },
